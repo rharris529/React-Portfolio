@@ -1,21 +1,40 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import Footer from '../src/components/Footer';
-import ContactForm from "./components/Contact";
+import Nav from "./components/Nav";
+import Section from "./components/Section";
 
 function App() {
+
+  const [categories] = useState([
+    {
+      name: "About Me"
+    },
+    {
+      name: "Projects"
+    },
+    {
+      name: "Contact Me"
+    }
+
+  ])
+
+  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+
   return (
-    <div>
-      <main>
+
+    <div className="App">
       <Nav>
-        <About></About>
-        <Resume></Resume>
-        <Project></Project>
-        <ContactForm></ContactForm>
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
       </Nav>
+      <main>
+      <Section currentCategory={currentCategory}></Section>
       </main>
       <Footer></Footer>
     </div>
+
   );
 }
 

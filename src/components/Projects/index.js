@@ -1,6 +1,6 @@
 import React from "react";
 
-function Project() {
+function Projects() {
 
     return (
         <div className="card" style="width: 18rem;">
@@ -14,4 +14,4 @@ function Project() {
 
 }
 
-export default Project;
+export default Projects;
