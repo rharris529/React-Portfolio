@@ -21,7 +21,7 @@ function Section({ currentCategory }) {
     return (
         <div>
             <h3>{currentCategory.name}</h3>
-            <Page>{renderSection()}</Page>
+            <Page>{renderSection(currentCategory)}</Page>
         </div>
     )
 }

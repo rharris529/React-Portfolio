@@ -24,10 +24,10 @@ function App() {
   return (
 
     <div className="App">
-      <Nav>
+      <Nav    
         categories={categories}
         setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
+        currentCategory={currentCategory}>
       </Nav>
       <main>
       <Section currentCategory={currentCategory}></Section>

@@ -18,7 +18,7 @@ function ContactForm() {
                 <label htmlFor='message'>Message:</label>
                 <textarea name='message' rows="5" placeholder='Leave a message!'></textarea>
                 </div>
-                <button type="submit"></button>
+                <button type="submit">Submit</button>
             </form>
         </section>
     );
