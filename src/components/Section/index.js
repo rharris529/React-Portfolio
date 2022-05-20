@@ -8,10 +8,10 @@ function Section({ currentCategory }) {
     function renderSection() {
         switch (currentCategory.name) {
             case "About Me":
-                return <About />
+                return <About />;
             case "Projects":
                 return <Projects />
-            case "Contact":
+            case "Contact Me":
                 return <Contact />
             default:
                 return <About />
@@ -19,8 +19,8 @@ function Section({ currentCategory }) {
     }
 
     return (
-        <div>
-            <h3>{currentCategory.name}</h3>
+        <div className='d-flex flex-column align-items-center'>
+            <h3 className='h3 m-4'>{currentCategory.name}</h3>
             <Page>{renderSection(currentCategory)}</Page>
         </div>
     )

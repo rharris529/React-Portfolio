@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 function Nav(props) {
     
@@ -9,12 +9,17 @@ function Nav(props) {
 
     } = props;
 
+    useEffect(() => {
+        document.title = currentCategory.name;
+    }, [currentCategory])
+
     return (
-        <nav>
+        <header>
+            <nav>
             <ul className='flex-row'>
             {categories.map((category) => (
                     <li key={category.name}>
-                    <a href={`${category.name}`} onClick={() => {
+                    <a href={`${currentCategory.name === category.name}`} onClick={() => {
                         currentCategory(category);
                         setCurrentCategory(false);
                     }}>
@@ -23,7 +28,9 @@ function Nav(props) {
                     </li>
                 ))}
             </ul>
-        </nav>
+            </nav>
+        </header>
+
     )
 }
 
